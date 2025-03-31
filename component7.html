@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <title>Image Carousel</title>
+
+  <style>
+    
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 580px;
+      margin-top: 11.32%;
+      margin-left: 28.3%;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .carousel-img {
+      width: 100%;
+      height: 400px;
+      object-fit: contain;
+      background-color:white;
+    }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .prev-button { left: 10px; }
+    .next-button { right: 10px; }
+    
+  </style>
+</head>
+<body style="background-image: url('picture1/TELEVISION7.png');background-repeat: no-repeat;
+        width: 100% margin 0;">
+  <div class="carousel-container">
+    <img id="carousel-img" src="hobby/6.jpg" alt="Slide 1" class="carousel-img">
+    <button class="carousel-button prev-button" onclick="showPrev()">&#8668;</button>
+    <button class="carousel-button next-button" onclick="showNext()">&#8669;</button>
+  </div>
+
+  <script>
+    const images = ['hobby/6.jpg','hobby/2.jpg','hobby/3.jpg','hobby/4.jpg','hobby/5.jpg','hobby/1.jpg','hobby/7.jpg','hobby/8.jpg','hobby/9.jpg','hobby/10.jpg','hobby/11.jpg'];
+    let currentIndex = 0;
+    
+    function showImage(index) {
+      const imgElement = document.getElementById('carousel-img');
+      imgElement.src = images[index];
+      imgElement.alt = `Slide ${index + 1}`;
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+      showImage(currentIndex);
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+      showImage(currentIndex);
+    }
+  </script>
+   
+  
+   
+</body>
+</html>
