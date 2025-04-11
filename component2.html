@@ -3,24 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
   <title>Image Carousel</title>
 
   <style>
-   
+    
     .carousel-container {
-      position: relative;
+   position: absolute; left: 0%;
       width: 100%;
-      max-width: 600px;
-      margin: 2% auto;
+      max-width: 580px;
+      margin-top: 11.32%;
+      margin-left: 28.3%;
       overflow: hidden;
-      border-radius: 20px;
+      border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     .carousel-img {
       width: 100%;
       height: 400px;
-      object-fit: cover;
+      object-fit: contain;
+      background-color:white;
     }
     .carousel-button {
       position: absolute;
@@ -35,20 +37,24 @@
     }
     .prev-button { left: 10px; }
     .next-button { right: 10px; }
+    
   </style>
 </head>
-<body>
-  
+<body style="background-image: url('al7mp-2rjgz.webp');background-repeat: no-repeat;
+        width: 100% margin 0;">
+   <div class="level">
+    <a href="index.html">回首頁!</a>
+  </div>
   <div class="carousel-container">
-    <img id="carousel-img" src="picture1/newspaper1.png" alt="Slide 1" class="carousel-img">
+    <img id="carousel-img" src="2-1.webp" alt="Slide 1" class="carousel-img">
     <button class="carousel-button prev-button" onclick="showPrev()">&#8668;</button>
     <button class="carousel-button next-button" onclick="showNext()">&#8669;</button>
   </div>
 
   <script>
-    const images = ['picture1/newspaper1.png', 'picture1/right.jpeg', 'picture1/timepicture4.jpeg'];
+    const images = ['2-1.webp','2-2.webp','2-3.webp','2-4.webp','2-5.webp','2-6.webp','2-7.webp','2-8.webp','2-9.webp'];
     let currentIndex = 0;
-
+    
     function showImage(index) {
       const imgElement = document.getElementById('carousel-img');
       imgElement.src = images[index];
@@ -65,5 +71,29 @@
       showImage(currentIndex);
     }
   </script>
+  <style>
+    .level {
+      width: 600px;
+      height: 30px;
+    text-align: center;
+      font-family: serif;
+      font-style: black;
+      color:gray
+    }
+    .level{
+      position: relative;
+    }
+    .level a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+   
+  
+   
 </body>
 </html>
