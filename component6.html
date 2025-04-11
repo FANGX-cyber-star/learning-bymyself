@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
   <title>Image Carousel</title>
 
   <style>
     
     .carousel-container {
-      position: relative;
+   position: absolute; left: 0%;
       width: 100%;
       max-width: 580px;
       margin-top: 11.32%;
@@ -21,7 +21,8 @@
     .carousel-img {
       width: 100%;
       height: 400px;
-      object-fit: cover;
+      object-fit: contain;
+      background-color:white;
     }
     .carousel-button {
       position: absolute;
@@ -39,16 +40,19 @@
     
   </style>
 </head>
-<body style="background-image: url('picture1/TELEVISION7.png');background-repeat: no-repeat;
+<body style="background-image: url('al7mp-2rjgz.webp');background-repeat: no-repeat;
         width: 100% margin 0;">
+   <div class="level">
+    <a href="index.html">回首頁!</a>
+  </div>
   <div class="carousel-container">
-    <img id="carousel-img" src="picture1/newspaper1.png" alt="Slide 1" class="carousel-img">
+    <img id="carousel-img" src="6-2.webp" alt="Slide 1" class="carousel-img">
     <button class="carousel-button prev-button" onclick="showPrev()">&#8668;</button>
     <button class="carousel-button next-button" onclick="showNext()">&#8669;</button>
   </div>
 
   <script>
-    const images = ['picture1/newspaper1.png', 'picture1/right.jpeg', 'picture1/timepicture4.jpeg'];
+    const images = ['6-2.webp','6-3.webp','6-4.webp','6-5.webp','6-7.webp','6-8.webp','6-9.webp','6-10.webp'];
     let currentIndex = 0;
     
     function showImage(index) {
@@ -67,6 +71,27 @@
       showImage(currentIndex);
     }
   </script>
+  <style>
+    .level {
+      width: 600px;
+      height: 30px;
+    text-align: center;
+      font-family: serif;
+      font-style: black;
+      color:gray
+    }
+    .level{
+      position: relative;
+    }
+    .level a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
    
   
    
